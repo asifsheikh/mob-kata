@@ -3,7 +3,10 @@ pluginManagement {
         mavenCentral()
         gradlePluginPortal()
     }
-    
 }
-rootProject.name = "mob-kata"
 
+plugins {
+    id("org.gradle.toolchains.foojay-resolver-convention") version "0.5.0"
+}
+
+rootProject.name = "mob-kata"

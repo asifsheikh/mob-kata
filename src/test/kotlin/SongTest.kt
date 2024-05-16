@@ -61,4 +61,18 @@ class SongTest {
             """.trimIndent()
         )
     }
+
+    @Test
+    internal fun `should print the last stanza`() {
+        val stanza = Stanza()
+
+        val text = stanza.drink(0)
+
+        assertThat(text).isEqualTo(
+            """
+                No more bottles of beer on the wall, no more bottles of beer.
+                Go to the store and buy some more, 99 bottles of beer on the wall.
+            """.trimIndent()
+        )
+    }
 }

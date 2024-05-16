@@ -49,7 +49,7 @@ class SongTest {
     }
 
     @Test
-    internal fun `should print stanza number from 1`() {
+    internal fun `should print stanza number 1`() {
         val stanza = Stanza()
 
         val text = stanza.drink(1)

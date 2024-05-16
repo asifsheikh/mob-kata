@@ -1,20 +1,14 @@
 class Stanza {
     fun drink(numberOfBottles: Int): String {
-        val bottlesLeft = if (numberOfBottles > 1) {
-            numberOfBottles - 1
-        } else {
-            "no more"
+        return when(numberOfBottles){
+            1 -> """
+                1 bottle of beer on the wall, 1 bottle of beer.
+                Take one down and pass it around, no more bottles of beer on the wall.
+            """.trimIndent()
+            else -> """
+                $numberOfBottles bottles of beer on the wall, $numberOfBottles bottles of beer.
+                Take one down and pass it around, ${numberOfBottles-1} bottles of beer on the wall.
+            """.trimIndent()
         }
-
-        val bottlesText = if (numberOfBottles > 1) {
-            "$numberOfBottles bottles"
-        } else {
-            "$numberOfBottles bottle"
-        }
-
-        return  """
-            $bottlesText of beer on the wall, $bottlesText of beer.
-            Take one down and pass it around, $bottlesLeft bottles of beer on the wall.
-        """.trimIndent()
     }
 }

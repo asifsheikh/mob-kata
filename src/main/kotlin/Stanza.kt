@@ -1,8 +1,8 @@
 class Stanza {
-    fun drink(i: Int): String {
+    fun drink(numberOfBottles: Int): String {
         return  """
-            $i bottles of beer on the wall, $i bottles of beer.
-            Take one down and pass it around, ${i - 1} bottles of beer on the wall.
+            $numberOfBottles bottles of beer on the wall, $numberOfBottles bottles of beer.
+            Take one down and pass it around, ${numberOfBottles - 1} bottles of beer on the wall.
         """.trimIndent()
     }
 }

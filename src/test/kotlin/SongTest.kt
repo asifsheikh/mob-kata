@@ -1,4 +1,3 @@
-import com.google.common.truth.Truth
 import com.google.common.truth.Truth.assertThat
 import org.junit.jupiter.api.Test
 
@@ -6,10 +5,10 @@ class SongTest {
     @Test
     internal fun `should print first stanza`() {
         // GIVEN
-        val stanza = Stanza()
+        val bottles = Bottles()
 
         // WHEN
-        val text = stanza.drink(99)
+        val text = bottles.verse(99)
 
         // THEN
         assertThat(text).isEqualTo(
@@ -22,9 +21,9 @@ class SongTest {
 
     @Test
     internal fun `should print stanza 86`() {
-        val stanza = Stanza()
+        val bottles = Bottles()
 
-        val text = stanza.drink(86)
+        val text = bottles.verse(86)
 
         assertThat(text).isEqualTo(
             """
@@ -36,9 +35,9 @@ class SongTest {
 
     @Test
     internal fun `should print stanza number 10`() {
-        val stanza = Stanza()
+        val bottles = Bottles()
 
-        val text = stanza.drink(10)
+        val text = bottles.verse(10)
 
         assertThat(text).isEqualTo(
             """
@@ -50,9 +49,9 @@ class SongTest {
 
     @Test
     internal fun `should print stanza number 1`() {
-        val stanza = Stanza()
+        val bottles = Bottles()
 
-        val text = stanza.drink(1)
+        val text = bottles.verse(1)
 
         assertThat(text).isEqualTo(
             """
@@ -64,9 +63,9 @@ class SongTest {
 
     @Test
     internal fun `should print the last stanza`() {
-        val stanza = Stanza()
+        val bottles = Bottles()
 
-        val text = stanza.drink(0)
+        val text = bottles.verse(0)
 
         assertThat(text).isEqualTo(
             """

@@ -1,5 +1,5 @@
-class Stanza {
-    fun drink(numberOfBottles: Int): String {
+class Bottles {
+    fun verse(numberOfBottles: Int): String {
         return when(numberOfBottles){
             1 -> """
                 1 bottle of beer on the wall, 1 bottle of beer.

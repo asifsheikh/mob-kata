@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test
 
 class SongTest {
     @Test
-    internal fun `should print first stanza`() {
+    internal fun `should print stanza 99`() {
         // GIVEN
         val bottles = Bottles()
 
@@ -71,6 +71,20 @@ class SongTest {
             """
                 No more bottles of beer on the wall, no more bottles of beer.
                 Go to the store and buy some more, 99 bottles of beer on the wall.
+            """.trimIndent()
+        )
+    }
+
+    @Test
+    internal fun `should print verse for 2`() {
+        val bottles = Bottles()
+
+        val text = bottles.verse(2)
+
+        assertThat(text).isEqualTo(
+            """
+                2 bottles of beer on the wall, 2 bottles of beer.
+                Take one down and pass it around, 1 bottle of beer on the wall.
             """.trimIndent()
         )
     }

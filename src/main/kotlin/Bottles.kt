@@ -1,16 +1,9 @@
 class Bottles {
-    fun verse(numberOfBottles: Int): String = when (numberOfBottles) {
-        0 ->
-            "No more bottles of beer on the wall, " +
-                    "no more bottles of beer." + "\n" +
-                    "Go to the store and buy some more, " +
-                    "99 bottles of beer on the wall."
-        else ->
-            "$numberOfBottles ${container(numberOfBottles)} of beer on the wall, " +
-                    "$numberOfBottles ${container(numberOfBottles)} of beer." + "\n" +
-                    "Take ${pronoun(numberOfBottles)} down and pass it around, " +
-                    "${quantity(numberOfBottles - 1)} ${container(numberOfBottles - 1)} of beer on the wall."
-    }
+    fun verse(numberOfBottles: Int): String =
+        "${quantity(numberOfBottles).capitalize()} ${container(numberOfBottles)} of beer on the wall, " +
+                "${quantity(numberOfBottles)} ${container(numberOfBottles)} of beer." + "\n" +
+                "${action(numberOfBottles)}, " +
+                "${quantity(successor(numberOfBottles))} ${container(numberOfBottles - 1)} of beer on the wall."
 
     fun verses(high: Int, low: Int): String {
         var stringBuffer = ""
@@ -33,4 +26,11 @@ class Bottles {
     private fun quantity(number: Int): String = if (number == 0)
         "no more"
     else number.toString()
+
+    private fun action(number: Int): String = if (number == 0)
+        "Go to the store and buy some more"
+    else "Take ${pronoun(number)} down and pass it around"
+
+    private fun successor(number: Int): Int = if (number == 0) 99
+    else number - 1
 }

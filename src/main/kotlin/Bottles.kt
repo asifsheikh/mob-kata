@@ -18,10 +18,6 @@ class Bottles {
 
     }
 
-    private fun container(number: Int): String = if (number == 1)
-        "bottle"
-    else "bottles"
-
     fun verses(high: Int, low: Int): String {
         var stringBuffer = ""
         for (i in high downTo low) {
@@ -31,4 +27,8 @@ class Bottles {
     }
 
     fun sing(): String = verses(99, 0)
+
+    private fun container(number: Int): String = if (number == 1)
+        "bottle"
+    else "bottles"
 }
